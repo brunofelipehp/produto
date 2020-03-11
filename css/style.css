@@ -1,0 +1,59 @@
+#menu {
+    background-color: rgb(86, 61, 124);
+    margin-bottom: 60px;
+}
+
+#btn-novo {
+
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#btn-cadastar{
+
+    margin-top: 15px;
+    padding: 10px;
+}
+
+#tabela {
+    margin-top: 50px;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: rgba(174, 150, 187, 0.801);
+    transition-delay: 0.5s;
+}
+
+.navbar-brand:hover {
+    color:white;
+    transition-delay: 0.5s;
+}
+
+.modal-header {
+
+    background-color:  rgb(86, 61, 124);
+    
+}
+
+#visul {
+    float: right;
+    color: rgb(245, 245, 245);
+    text-align: center;
+    
+    
+}
+
+
+.Page {
+    position: absolute;
+	left: 50%;
+	right: 50%;
+}
