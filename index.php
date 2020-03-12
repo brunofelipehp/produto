@@ -14,7 +14,7 @@ use \App\Model\ProdutoDao;  ?>
 
   $sessao->produtoSessao();
 
-$limite = 10;
+$limite = 5;
 
 if( isset( $_GET['pagina'] ) && (int)$_GET['pagina'] >= 0){
   $pagina = (int)$_GET['pagina'];
@@ -39,9 +39,28 @@ $numPage = ceil($total / $limite);
 ?>
 
 <div class="container" id="tabela">
+<div class="row">
 
-  <a id="btn-novo" type="button" class="btn btn-primary" href="cadastrar.php">Cadastrar</a>
-  <?php ?>
+<div class="col-6">
+<a id="btn-novo" type="button" class="btn btn-primary" href="cadastrar.php">Cadastrar</a>
+
+</div>
+<div class="col-6">
+<form class="form-inline">
+  
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">Buscar Produto</label>
+    <input type="text" class="form-control"  placeholder="Buscar Produto">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+</form>
+</div>
+</div>
+
+ 
+
+
+  
     <table class="table table-striped">
 
       <thead class="thead-dark">
@@ -55,6 +74,15 @@ $numPage = ceil($total / $limite);
         </tr>
       </thead>
       <tbody>
+        <?php if ($produtos == "") { ?>
+           <tr>
+           <td><?php echo "-";?></td>
+           <td><?php echo "-";?></td>
+           <td><?php echo "-";?></td>
+           <td><?php echo "-";?></td>
+           
+           <td>
+       <?php } ?>
         <?php foreach ($produtos as $produto) :
         ?>
           <tr>
@@ -76,6 +104,10 @@ $numPage = ceil($total / $limite);
       </tbody>
     </table>
     
-<?php require_once 'paginacao.php' ?>
+
+    <?php require_once 'paginacao.php' ?>
+ 
+
+</div>
 <?php require_once 'modal.php' ?>
 <?php require_once 'footer.php'; ?>
